@@ -18,12 +18,12 @@ export class AdminAuthGuard extends JwtAuthGuard {
   }
 
   private verificarAcessoAdmin = (context: ExecutionContext): boolean => {
-    const request = context.switchToHttp().getRequest();
-    const usuario = request.user;
+    const requisicao = context.switchToHttp().getRequest();
+    const usuario = requisicao.user;
 
     if (!usuario) {
       throw new UnauthorizedException(
-        'Acesso não autorizado. Usuário não identificado.',
+        '[Admin] Acesso não autorizado. Usuário não identificado.',
       );
     }
 

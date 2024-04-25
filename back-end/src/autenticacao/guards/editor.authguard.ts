@@ -18,12 +18,12 @@ export class EditorAuthGuard extends JwtAuthGuard {
   }
 
   private verificarAcessoEditor = (context: ExecutionContext): boolean => {
-    const request = context.switchToHttp().getRequest();
-    const usuario = request.user;
+    const requisicao = context.switchToHttp().getRequest();
+    const usuario = requisicao.user;
 
     if (!usuario) {
       throw new UnauthorizedException(
-        'Acesso não autorizado. Usuário não identificado.',
+        '[Editor] Acesso não autorizado. Usuário não identificado.',
       );
     }
 
