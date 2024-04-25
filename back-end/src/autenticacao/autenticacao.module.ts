@@ -20,7 +20,7 @@ import { Usuario } from 'src/usuario/entities/usuario.entity';
       useFactory: (configService: ConfigService) => ({
         secret: configService.get<string>('jwt.chaveSecreta'),
         signOptions: {
-          expiresIn: configService.get<string>('jwt.expiraEm'),
+          expiresIn: configService.get<string>('jwt.expiraEm', '1d'),
         },
       }),
     }),
