@@ -7,7 +7,7 @@ import { UsuarioModule } from 'src/usuario/usuario.module';
 import { JwtEstrategia } from './estrategias/jwt.estrategia';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Usuario } from 'src/usuario/entities/usuario.entity';
+import { Usuario } from '../../src/usuario/entities/usuario.entity';
 
 @Module({
   imports: [

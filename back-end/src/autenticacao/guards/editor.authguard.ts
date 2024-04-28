@@ -4,7 +4,7 @@ import {
   UnauthorizedException,
 } from '@nestjs/common';
 import { JwtAuthGuard } from './jwt.authguard';
-import { Cargo } from 'src/usuario/entities/usuario.entity';
+import { Cargo } from '../../../src/usuario/entities/usuario.entity';
 
 @Injectable()
 export class EditorAuthGuard extends JwtAuthGuard {

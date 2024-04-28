@@ -5,7 +5,7 @@ import { RegistroDto } from './dto/registro.dto';
 import { LoginDto } from './dto/login.dto';
 import { JwtPayload } from './autenticacao.interface';
 import * as bcrypt from 'bcryptjs';
-import { Cargo, Usuario } from 'src/usuario/entities/usuario.entity';
+import { Cargo, Usuario } from '../../src/usuario/entities/usuario.entity';
 import { ConfigService } from '@nestjs/config';
 import { UsuarioSemSenha } from './autenticacao.interface';
 

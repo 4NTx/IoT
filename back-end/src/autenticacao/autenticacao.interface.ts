@@ -1,4 +1,4 @@
-import { Cargo } from 'src/usuario/entities/usuario.entity';
+import { Cargo } from '../../src/usuario/entities/usuario.entity';
 
 export interface UsuarioSemSenha {
   id: number;
