@@ -5,9 +5,10 @@ import { RegistroDto } from './dto/registro.dto';
 import { LoginDto } from './dto/login.dto';
 import { JwtPayload } from './autenticacao.interface';
 import * as bcrypt from 'bcryptjs';
-import { Cargo, Usuario } from '../../src/usuario/entities/usuario.entity';
+import { Cargo, Usuario } from '../usuario/entities/usuario.entity';
 import { ConfigService } from '@nestjs/config';
 import { UsuarioSemSenha } from './autenticacao.interface';
+import { EmailService } from 'src/email/email.service';
 
 @Injectable()
 export class AutenticacaoService {
@@ -15,6 +16,7 @@ export class AutenticacaoService {
     private usuarioService: UsuarioService,
     private jwtService: JwtService,
     private configService: ConfigService,
+    private emailService: EmailService,
   ) { }
 
   async registrar(registroDto: RegistroDto): Promise<UsuarioSemSenha> {
@@ -25,6 +27,11 @@ export class AutenticacaoService {
       senha: senhaHashed,
       cargo: Cargo.USUARIO,
     });
+    this.emailService.enviarEmail(
+      'boas-vindas.hbs',
+      { nome: usuarioCriado.nome_usuario },
+      { to: usuarioCriado.email }
+    );
     return this.eliminarDadosSensiveis(usuarioCriado);
   }
 
