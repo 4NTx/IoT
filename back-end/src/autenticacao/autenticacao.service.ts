@@ -28,7 +28,7 @@ export class AutenticacaoService {
       cargo: Cargo.USUARIO,
     });
     this.emailService.enviarEmail(
-      'boas-vindas.hbs',
+      'boasVindas.hbs',
       { nome: usuarioCriado.nome_usuario },
       { to: usuarioCriado.email }
     );

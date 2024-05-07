@@ -8,6 +8,7 @@ import { JwtEstrategia } from './estrategias/jwt.estrategia';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Usuario } from '../usuario/entities/usuario.entity';
+import { EmailService } from 'src/email/email.service';
 
 @Module({
   imports: [
@@ -25,7 +26,7 @@ import { Usuario } from '../usuario/entities/usuario.entity';
       }),
     }),
   ],
-  providers: [AutenticacaoService, JwtEstrategia],
+  providers: [AutenticacaoService, JwtEstrategia, EmailService],
   controllers: [AutenticacaoController],
 })
 export class AutenticacaoModule { }

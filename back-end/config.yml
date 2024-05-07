@@ -2,23 +2,30 @@
 aplicacao:
   porta: 3999 # Porta para a aplicação
 
+email:
+  email: '' # E-mail do Gmail para envio de e-mails
+  senha: '' # Senha do Gmail para envio de e-mails
+  host: 'smtp.gmail.com' # Host do servidor de e-mail
+  porta: 587 # Porta do servidor de e-mail
+  seguro: false # Usar conexão segura (SSL/TLS)
+
 # Configurações do banco de dados
 bancoDeDados:
-  tipo: mariadb # Tipo de DB (suporta: mariadb, mysql, postgresql, sqlite)
-  host: localhost # Endereço do servidor de DB
+  tipo: 'mariadb' # Tipo de DB (suporta: mariadb, mysql, postgresql, sqlite)
+  host: 'localhost' # Endereço do servidor de DB
   porta: 3306 # Porta de conexão do DB
-  usuario: 4ntz # Nome de usuário do DB
-  senha: RdM[V*uxEuYYRPsZ # Senha de acesso ao DB
-  nome: teste # Nome do banco de dados
+  usuario: '4ntz' # Nome de usuário do DB
+  senha: 'RdM[V*uxEuYYRPsZ' # Senha de acesso ao DB
+  nome: 'teste' # Nome do banco de dados
   sincronizar: true # Sincronizar entidades com o DB
   timezone: '-03:00' # Fuso horário do DB (ver TZ database)
   logger: false # Ativar log de operações do DB
-  loggerTipo: advanced-console # Tipo de log (suporta: advanced-console, simple-console, file, debug)
+  loggerTipo: 'advanced-console' # Tipo de log (suporta: advanced-console, simple-console, file, debug)
 
 # Configurações de autenticação JWT
 jwt:
-  chaveSecreta: penisWhiteIsBlack # Chave secreta para JWT
-  expiraEm: 1d # Duração do token (1d = 1 dia, 1h = 1 hora)
+  chaveSecreta: 'penisWhiteIsBlack' # Chave secreta para JWT
+  expiraEm: '1d' # Duração do token (1d = 1 dia, 1h = 1 hora)
   ignorarExpiracao: true # Ignorar expiração do token durante desenvolvimento
 
 # Segurança
