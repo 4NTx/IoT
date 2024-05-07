@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { MiddlewareConsumer, Module, RequestMethod } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
@@ -7,6 +7,8 @@ import { AutenticacaoModule } from './autenticacao/autenticacao.module';
 import { ConfigService, ConfigModule } from '@nestjs/config';
 import * as yaml from 'js-yaml';
 import * as fs from 'fs';
+import { EmailModule } from './email/email.module';
+import { CopiarTemplateMiddleWare } from './email/email.middleware';
 
 @Module({
   imports: [
@@ -32,10 +34,17 @@ import * as fs from 'fs';
       inject: [ConfigService],
     }),
     UsuarioModule,
-    AutenticacaoModule],
+    AutenticacaoModule,
+    EmailModule],
   controllers: [AppController],
   providers: [
     AppService
   ],
 })
-export class AppModule { }
+export class AppModule {
+  configure(consumer: MiddlewareConsumer) {
+    consumer
+      .apply(CopiarTemplateMiddleWare)
+      .forRoutes({ path: '/autenticacao/registro', method: RequestMethod.POST });
+  }
+}
