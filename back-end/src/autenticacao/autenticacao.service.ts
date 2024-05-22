@@ -37,13 +37,17 @@ export class AutenticacaoService {
 
   async login(loginDto: LoginDto): Promise<{ access_token: string }> {
     const usuario = await this.usuarioService.encontrarPorLogin(loginDto);
-    if (!usuario || !(await bcrypt.compare(loginDto.senha, usuario.senha))) {
+    if (!usuario || !(await this.compararSenhas(loginDto.senha, usuario.senha))) {
       throw new UnauthorizedException('Credenciais inválidas');
     }
     const payload: JwtPayload = this.criarPayloadJwt(usuario);
     return {
       access_token: this.jwtService.sign(payload),
     };
+  }
+
+  async compararSenhas(senhaNormal: string, senhaHashed: string): Promise<boolean> {
+    return await bcrypt.compare(senhaNormal, senhaHashed);
   }
 
   private criarPayloadJwt(usuario: Usuario): JwtPayload {
