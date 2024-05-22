@@ -35,8 +35,9 @@ export class EmailService {
 
     private carregarTemplate(caminhoTemplate: string, contexto: object): { assunto: string, html: string } {
         try {
-            const conteudo = readFileSync(join(__dirname, 'templates', caminhoTemplate), 'utf-8');
-            
+            const caminhoCompleto = join(__dirname, '..', 'email', 'templates', caminhoTemplate);
+            const conteudo = readFileSync(caminhoCompleto, 'utf-8');
+
             const correspondenciaAssunto = conteudo.match(/{{!assunto="(.*?)"}}/);
             const assunto = correspondenciaAssunto ? correspondenciaAssunto[1] : 'Sem Assunto';
 
