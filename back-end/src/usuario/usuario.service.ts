@@ -48,7 +48,7 @@ export class UsuarioService {
     }
   }
 
-  private async obterUsuarioPorLogin(
+  async obterUsuarioPorLogin(
     loginDto: LoginUsuarioDto,
   ): Promise<Usuario | undefined> {
     const { login } = loginDto;
@@ -63,5 +63,9 @@ export class UsuarioService {
       throw new NotFoundException(`Usuário com ID '${id}' não encontrado.`);
     }
     return usuario;
+  }
+
+  async atualizarUsuario(usuario: Usuario): Promise<Usuario> {
+    return this.usuarioRepository.save(usuario);
   }
 }

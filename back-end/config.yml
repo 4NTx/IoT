@@ -1,6 +1,7 @@
 # Configurações gerais da aplicação
 aplicacao:
   porta: 3999 # Porta para a aplicação
+  url: 'http://localhost' # Url da aplicação
 
 email:
   email: '' # E-mail do Gmail para envio de e-mails
@@ -26,7 +27,7 @@ bancoDeDados:
 jwt:
   chaveSecreta: 'penisWhiteIsBlack' # Chave secreta para JWT
   expiraEm: '1d' # Duração do token (1d = 1 dia, 1h = 1 hora)
-  ignorarExpiracao: true # Ignorar expiração do token durante desenvolvimento
+  ignorarExpiracao: false # Ignorar expiração do token durante desenvolvimento
 
 # Segurança
 seguranca:

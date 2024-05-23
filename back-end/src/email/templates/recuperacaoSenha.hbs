@@ -1,8 +1,8 @@
-{{!assunto="Boas Vindas"}}
+{{!assunto="Recuperação de Senha"}}
 <html lang='pt-br'>
   <head>
     <meta charset='UTF-8' />
-    <title>Bem-vindo</title>
+    <title>Recuperação de Senha</title>
     <style>
       body { font-family: Arial, sans-serif; background-color: #f4f4f4; margin:
       0; padding: 0; width: 100%; line-height: 1.6; } .email-container {
@@ -10,19 +10,25 @@
       max-width: 600px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0,
       0.1); } h1 { color: #333; margin-bottom: 15px; } p { color: #555;
       margin-bottom: 20px; } .cta-button { display: inline-block;
-      background-color: #28a745; color: #ffffff; padding: 12px 24px;
+      background-color: #007bff; color: #ffffff; padding: 12px 24px;
       text-decoration: none; border-radius: 5px; margin-top: 20px; transition:
       background-color 0.3s ease; } .cta-button:hover { background-color:
-      #218838; } footer { margin-top: 40px; font-size: 0.9em; color: #888;
+      #0056b3; } footer { margin-top: 40px; font-size: 0.9em; color: #888;
       text-align: center; }
     </style>
   </head>
   <body>
     <div class='email-container'>
-      <h1>Olá, {{nome}}!</h1>
-      <p>Estamos muito felizes que você se juntou a nós! Explore nossos serviços
-        e não hesite em entrar em contato se precisar de ajuda.</p>
-      <a href='{{url}}' class='cta-button'>Conheça Mais</a>
+      <h1>Recuperação de Senha</h1>
+      <p>Olá {{nome}},</p>
+      <p>Você solicitou a recuperação de senha. Clique no botão abaixo para
+        redefinir sua senha:</p>
+      <a
+        href='{{url}}/redefinir-senha?token={{token}}'
+        class='cta-button'
+      >Redefinir Senha</a>
+      <p>Se você não solicitou a recuperação de senha, por favor, ignore este
+        e-mail.</p>
       <footer>
         <p>Atenciosamente,</p>
         <p>A Equipe</p>
