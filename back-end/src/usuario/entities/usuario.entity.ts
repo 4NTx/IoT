@@ -1,5 +1,6 @@
-import { Entity, PrimaryGeneratedColumn, Column, Index } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, Index, In, BeforeInsert } from 'typeorm';
 import { IsEnum } from 'class-validator';
+import { v4 as uuidv4 } from 'uuid';
 
 export enum Cargo {
   USUARIO = 'USUARIO',
@@ -21,9 +22,19 @@ export class Usuario {
   email: string;
 
   @Column()
+  @Index('senha_idx')
   senha: string;
 
   @Column({ type: 'enum', enum: Cargo, default: Cargo.USUARIO })
+  @Index('cargo_idx')
   @IsEnum(Cargo)
   cargo: Cargo;
+
+  @Column({ nullable: true })
+  recuperacaoSenhaUUID: string;
+
+  @BeforeInsert()
+  gerarUUID() {
+    this.recuperacaoSenhaUUID = uuidv4();
+  }
 }

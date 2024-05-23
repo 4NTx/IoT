@@ -65,6 +65,10 @@ export class UsuarioService {
     return usuario;
   }
 
+  async procurarPorRecuperacaoUUID(uuid: string): Promise<Usuario> {
+    return this.usuarioRepository.findOne({ where: { recuperacaoSenhaUUID: uuid } });
+  }
+
   async atualizarUsuario(usuario: Usuario): Promise<Usuario> {
     return this.usuarioRepository.save(usuario);
   }
