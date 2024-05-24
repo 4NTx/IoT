@@ -1,32 +1,79 @@
-{{!assunto="Boas Vindas"}}
-<html lang='pt-br'>
+{{!assunto="🌎 Meteorodata - Bem Vindo"}}
+<html>
+
   <head>
     <meta charset='UTF-8' />
-    <title>Bem-vindo</title>
-    <style>
-      body { font-family: Arial, sans-serif; background-color: #f4f4f4; margin:
-      0; padding: 0; width: 100%; line-height: 1.6; } .email-container {
-      background-color: #ffffff; margin: 40px auto; padding: 30px; width: 90%;
-      max-width: 600px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0,
-      0.1); } h1 { color: #333; margin-bottom: 15px; } p { color: #555;
-      margin-bottom: 20px; } .cta-button { display: inline-block;
-      background-color: #28a745; color: #ffffff; padding: 12px 24px;
-      text-decoration: none; border-radius: 5px; margin-top: 20px; transition:
-      background-color 0.3s ease; } .cta-button:hover { background-color:
-      #218838; } footer { margin-top: 40px; font-size: 0.9em; color: #888;
-      text-align: center; }
-    </style>
   </head>
-  <body>
-    <div class='email-container'>
-      <h1>Olá, {{nome}}!</h1>
-      <p>Estamos muito felizes que você se juntou a nós! Explore nossos serviços
-        e não hesite em entrar em contato se precisar de ajuda.</p>
-      <a href='{{url}}' class='cta-button'>Conheça Mais</a>
-      <footer>
-        <p>Atenciosamente,</p>
-        <p>A Equipe</p>
+
+  <body
+    style='font-family: Arial, sans-serif; margin: 0; padding: 0; text-align: center; line-height: 1.3;'
+  >
+    <div
+      style='background-color: #1b20210b; margin: 40px auto; padding: 30px; width: 90%; max-width: 600px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-top-left-radius: 50px; border-top-right-radius: 50px; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px;'
+    >
+      <div
+        style='background-color: #00aa8b74; padding: 20px; border-top-left-radius: 50px; border-top-right-radius: 50px;'
+      >
+        <img
+          src='https://i.imgur.com/d9h8pf3.png'
+          alt='Logo'
+          style='width: 60px; height: 60px;'
+        />
+        <h2 style='color: #fff; margin: 0; font-size: 24px;'>Meteorodata -
+          Autenticação</h2>
+      </div>
+      <h3>🎉 Seja bem vindo ao Meteorodata</h3>
+      <p>Bem vindo
+        <span style='font-weight: bold;'>{{nome}}</span>, seu registro foi
+        efetuado com sucesso, qualquer dúvida, entre em contato conosco!</p>
+      <a
+        href='{{url}}'
+        style='display: inline-block; background-color: #00aa8b; color: #fff; padding: 12px 24px; text-decoration: none; border-radius: 5px; margin-top: 10px; transition: background-color 0.3s ease; text-decoration: none;'
+      >CONHEÇA MAIS</a>
+    </div>
+    <div style='margin-top: -30px; text-align: center; padding-top: 10px;'>
+      <footer style='font-size: 0.9em; text-align: center;'>
+        <div>
+          <a
+            href='https://www.instagram.com/rexlabufsc'
+            target='_blank'
+            style='margin: 0 10px; text-decoration: none;'
+          >
+            <img
+              src='https://i.imgur.com/TMJOGJf.png'
+              alt='Instagram'
+              style='width: 32px; height: 32px; vertical-align: middle;'
+            />
+          </a>
+          <a
+            href='https://www.linkedin.com/company/rexlab/'
+            target='_blank'
+            style='margin: 0 10px; text-decoration: none;'
+          >
+            <img
+              src='https://i.imgur.com/ksLDAnp.png'
+              alt='LinkedIn'
+              style='width: 32px; height: 32px; vertical-align: middle;'
+            />
+          </a>
+          <a
+            href='https://meteorodata.ufsc.br/'
+            target='_blank'
+            style='margin: 0 10px; text-decoration: none;'
+          >
+            <img
+              src='https://i.imgur.com/AIiZit0.png'
+              alt='Website'
+              style='width: 32px; height: 32px; vertical-align: middle;'
+            />
+          </a>
+        </div>
       </footer>
+      <div style='padding: 5px; text-align: center;'>
+        <p>Copyright © 2024 RExLAB - Meteorodata</p>
+        <p>Laboratório de Experimentação Remota</p>
+      </div>
     </div>
   </body>
+
 </html>
